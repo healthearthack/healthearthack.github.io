@@ -1,0 +1,13 @@
+:root {
+    --bg-primary: #0a0a0a;
+    --text-main: #e0e0e0;
+    --accent: #00ffcc;
+    --ack-purple: #bc13fe;
+}
+body { background: var(--bg-primary); color: var(--text-main); font-family: sans-serif; margin: 0; display: flex; }
+.main-content { padding: 40px; flex-grow: 1; min-height: 100vh; }
+.logo { font-size: 1.5rem; font-weight: bold; }
+.ack-signature { font-family: monospace; opacity: 0.7; }
+.tagline-large { color: var(--accent); font-weight: bold; margin-top: 10px; }
+.satellite-frame { width: 100%; max-width: 900px; border: 1px solid #333; margin-top: 20px; }
+/* Icon styles would go here - we can add them back once the base is stable */
