@@ -243,7 +243,8 @@ footer {
   line-height: 1;
   color: var(--pink);
   text-shadow: var(--shadow-pink), 4px 4px 0 var(--yellow);
-  animation: pop-in 0.9s cubic-bezier(.3,1.4,.5,1) 0.1s both;
+  animation: hero-burst 2s cubic-bezier(.2,1,.3,1) forwards;
+     neon-flicker 8s infinite 2s;
 }
 
 .hero-title span {
