@@ -25,10 +25,12 @@ function showToast(msg, color = 'green') {
 
 /* ── HIGHLIGHT ACTIVE NAV LINK ── */
 function setActiveNav() {
-  const path = location.pathname;
+  const path = location.pathname.replace(/\/$/, '').split('/').pop();
+
   document.querySelectorAll('.nav-links a').forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === path ||
-      path.includes(a.getAttribute('href').replace('/index.html', '')));
+    const href = a.getAttribute('href').split('/').pop();
+
+    a.classList.toggle('active', href === path);
   });
 }
 document.addEventListener('DOMContentLoaded', setActiveNav);
