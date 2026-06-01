@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upload CV — SBTB</title>
+  <link rel="stylesheet" href="../site.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>" />
+</head>
+<body>
+
+  <div class="retro-bg"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="../index.html">📺 SBTB</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../game/index.html">Game</a></li>
+      <li><a href="../store/index.html">Store</a></li>
+      <li><a href="index.html" class="active">CV</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="cv-hero">
+    <span class="tag" style="background:var(--purple);color:var(--dark)">📄 Résumé Zone</span>
+    <h1>Drop Your CV</h1>
+    <p>Drag and drop your résumé below. PDF, DOC, DOCX, or TXT — we take 'em all.</p>
+  </div>
+
+  <div class="cv-container">
+
+    <!-- DROP ZONE -->
+    <div class="dropzone" id="dropzone">
+      <div class="dropzone-icon">📂</div>
+      <h3>Drop your CV here</h3>
+      <p>or click anywhere to browse — PDF, DOC, DOCX, TXT</p>
+      <input type="file" id="cvInput" accept=".pdf,.doc,.docx,.txt" />
+    </div>
+
+    <!-- PREVIEW (hidden until file dropped) -->
+    <div class="cv-preview" id="cvPreview">
+      <div class="cv-preview-header">
+        <h3>📄 File Ready</h3>
+        <div class="cv-file-info">
+          <span>📎</span>
+          <span id="cvFileName">—</span>
+          <span style="opacity:.5">·</span>
+          <span id="cvFileSize">—</span>
+        </div>
+      </div>
+
+      <p style="color:rgba(255,253,240,0.65); font-size:0.95rem; line-height:1.7;">
+        Your CV has been loaded and is ready. Use the buttons below to download it back or share a link.
+        In a real deployment this would send to a server or email intake.
+      </p>
+
+      <div class="cv-actions">
+        <button class="btn btn-green" id="downloadCV">⬇ Download</button>
+        <button class="btn btn-blue"  id="shareCV">🔗 Copy Link</button>
+        <button class="btn btn-pink"  id="removeCV">✕ Remove</button>
+      </div>
+    </div>
+
+    <!-- TIPS -->
+    <div class="tip-cards">
+      <div class="tip-card">
+        <h4>📝 Keep It Tight</h4>
+        <p>One page for most roles. Two pages max for senior positions. Recruiters skim — make every line count.</p>
+      </div>
+      <div class="tip-card">
+        <h4>🎨 Neon Ain't Everything</h4>
+        <p>While we love bold color here, a clean ATS-friendly format beats flashy design for most job applications.</p>
+      </div>
+      <div class="tip-card">
+        <h4>⚡ Action Verbs Win</h4>
+        <p>Lead bullets with verbs like "Built", "Led", "Launched", "Grew". Passive writing gets lost in the pile.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2024 SAVED BY THE BELL FANSITE &nbsp;·&nbsp; POWERED BY NEON &nbsp;·&nbsp; NO SQUARES ALLOWED
+  </footer>
+
+  <script src="../site.js"></script>
+</body>
+</html>
