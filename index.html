@@ -1,67 +1,85 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
-  <!-- CSS -->
-  <link
-    rel="stylesheet"
-    href="index.css"
-  />
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saved By The Bell — Home</title>
+  <link rel="stylesheet" href="site.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📺</text></svg>" />
 </head>
-
 <body>
 
-  <!-- Background Canvas -->
-  <canvas id="ecosystem"></canvas>
+  <div class="retro-bg"></div>
 
-  <!-- Main -->
-  <main class="reynolds">
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">📺 SBTB</a>
+    <ul class="nav-links">
+      <li><a href="index.html"    class="active">Home</a></li>
+      <li><a href="game/index.html">Game</a></li>
+      <li><a href="store/index.html">Store</a></li>
+      <li><a href="cv/index.html">CV</a></li>
+    </ul>
+  </nav>
 
-    <!-- Welcome Section -->
-    <section class="welcome">
-
-      <div class="welcome-invitation">
-
-        <h1>
-          Andrew C Kieckhefer
-        </h1>
-
-        <p>
-          Seeking opportunity
-          to work with GitHub.
-        </p>
-
-        <p>
-          AI
-          cloud
-          store
-          game
-          dashboard
-          weather
-          CV
-        </p>
-
-      </div>
-
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer>
-
-    <div>
-      ©2026
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">Welcome to the most radical site on the web</p>
+    <h1 class="hero-title">Saved By<br><span>The Bell</span></h1>
+    <p class="hero-sub">
+      Neon dreams, retro vibes, and totally tubular energy. 
+      Hang out, play games, shop the store, or drop your résumé.
+    </p>
+    <div class="hero-cta">
+      <a href="game/index.html"  class="btn btn-green">🕹️ Play Game</a>
+      <a href="store/index.html" class="btn btn-pink">🛍️ Shop Now</a>
+      <a href="cv/index.html"    class="btn btn-yellow">📄 Upload CV</a>
     </div>
+  </section>
 
+  <!-- CARDS -->
+  <section class="cards-section">
+    <h2>What's Your Scene?</h2>
+    <div class="cards-grid">
+
+      <a class="card pink" href="game/index.html">
+        <div class="card-icon">🕹️</div>
+        <h3 style="color:var(--green)">Neon Dodge</h3>
+        <p>Dodge glowing orbs in our arcade-style mini game. How long can you survive the neon storm?</p>
+        <br/>
+        <span class="btn btn-green" style="font-size:1rem">Play Now →</span>
+      </a>
+
+      <a class="card yellow" href="store/index.html">
+        <div class="card-icon">🛍️</div>
+        <h3 style="color:var(--pink)">The Merch Store</h3>
+        <p>Slap bracelets, acid-wash gear, neon scrunchies and more. Fully rad, totally 90s, no cap.</p>
+        <br/>
+        <span class="btn btn-pink" style="font-size:1rem">Shop →</span>
+      </a>
+
+      <a class="card green" href="cv/index.html">
+        <div class="card-icon">📄</div>
+        <h3 style="color:var(--yellow)">Upload Your CV</h3>
+        <p>Drag and drop your résumé. We've got you covered — whether you're job hunting or just showing off.</p>
+        <br/>
+        <span class="btn btn-yellow" style="font-size:1rem">Upload →</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- VIBE STRIP -->
+  <section style="padding: 2rem; text-align:center; border-top: 2px dashed rgba(255,255,255,0.08); border-bottom: 2px dashed rgba(255,255,255,0.08); margin: 0 2rem;">
+    <p style="font-family:'Boogaloo',cursive; font-size:1.5rem; letter-spacing:3px; color:var(--blue); text-shadow: var(--shadow-blue);">
+      ⭐ &nbsp; BE THERE &nbsp; ⭐ &nbsp; OR &nbsp; ⭐ &nbsp; BE SQUARE &nbsp; ⭐
+    </p>
+  </section>
+
+  <footer>
+    © 2024 SAVED BY THE BELL FANSITE &nbsp;·&nbsp; POWERED BY NEON &nbsp;·&nbsp; NO SQUARES ALLOWED
   </footer>
 
-  <!-- JavaScript -->
-  <script src="index.js"></script>
-
+  <script src="site.js"></script>
 </body>
-
 </html>
