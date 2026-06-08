@@ -1,0 +1,45 @@
+body {
+
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef4f8;
+}
+
+header {
+
+    text-align: center;
+    padding: 20px;
+    background: #0b3556;
+    color: white;
+}
+
+.forecastCard,
+.satelliteCard {
+
+    width: 90%;
+    margin: 20px auto;
+
+    background: white;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+
+#forecastText {
+
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+#goesImage {
+
+    width: 100%;
+    max-width: 1000px;
+
+    display: block;
+
+    margin: auto;
+}
