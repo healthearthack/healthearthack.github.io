@@ -57,7 +57,7 @@ function refreshSatellite() {
         );
 
     img.src =
-        "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/us/GEOCOLOR/1000x1000.jpg?t="
+        "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/CONUS/GEOCOLOR/1250x750.jpg?t="
         + Date.now();
 }
 
