@@ -15,7 +15,7 @@ function updateCycle() {
 
     if (melting) {
 
-        level -= 10;
+        level -= 5;
 
         status.textContent =
             "Melting";
@@ -27,7 +27,7 @@ function updateCycle() {
 
     } else {
 
-        level += 9;
+        level += 4;
 
         status.textContent =
             "Refreezing";
