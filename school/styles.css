@@ -1,0 +1,68 @@
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+background: #f4f6f9;
+}
+
+header {
+text-align: center;
+padding: 60px 20px;
+background: #0b3556;
+color: white;
+}
+
+.ctaButton {
+display: inline-block;
+margin-top: 15px;
+padding: 12px 24px;
+background: white;
+color: #0b3556;
+text-decoration: none;
+border-radius: 6px;
+}
+
+.hero,
+.certificate,
+#programs,
+#details {
+width: 90%;
+max-width: 1100px;
+margin: auto;
+padding: 40px 0;
+}
+
+.programGrid {
+display: flex;
+gap: 20px;
+flex-wrap: wrap;
+}
+
+.card {
+flex: 1;
+min-width: 250px;
+background: white;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+
+.card button {
+padding: 10px 15px;
+cursor: pointer;
+}
+
+.certificateSample {
+background: white;
+padding: 40px;
+text-align: center;
+font-weight: bold;
+border: 2px solid #0b3556;
+margin-top: 20px;
+}
+
+footer {
+background: #0b3556;
+color: white;
+text-align: center;
+padding: 20px;
+}
