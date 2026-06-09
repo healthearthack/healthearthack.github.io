@@ -1,57 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <title>Health Earth ACK's Tundra Visual</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Ice Sheet Tracker</title>
     <link rel="stylesheet" href="styles.css">
-
 </head>
-
 <body>
 
-<h1> Land Monitor</h1>
+    <header>
+        <h1>Dynamic Ice Sheet Tracker</h1>
+        <p>Ice coverage visualized as a dollar value (full = $100)</p>
+    </header>
 
-<div class="dashboard">
+    <main>
 
-    <div class="metric">
+        <!-- ICE SHEET DISPLAY -->
+        <section id="ice-container">
+            <div id="grass-layer"></div>
+            <div id="ice-layer"></div>
+            <div id="value-display">$100</div>
+        </section>
 
-        <h2>Current Value</h2>
-
-        <div id="value">$100</div>
-
-    </div>
-
-    <div class="metric">
-
-        <h2>Status</h2>
-
-        <div id="status">Frozen</div>
-
-    </div>
-
-</div>
-
-<div class="scene">
-
-    <div class="grass"></div>
-
-    <div id="ice" class="ice"></div>
-
-        <div class="snowcap"></div>
-    
-    </div>
-
-</div>
-
-<script src="app.js"></script>
-
-</body>
-  <footeer>
-    AI Powered ©2026
-  </footer>
-
-</html>
+        <!-- DAILY GRID -->
