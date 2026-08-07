@@ -1,0 +1,24 @@
+{
+  "name": "healthearthack.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/healthearthack/healthearthack.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/healthearthack/healthearthack.github.io/issues"
+  },
+  "homepage": "https://github.com/healthearthack/healthearthack.github.io#readme",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}
