@@ -4,58 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AИDY KIECKHEFER | UNIVERSAL AI DESGIN SYSTEM</title>
-  <link rel="stylesheet" href="tokens.css">
   <style>
     :root {
-      --ds-primary: #0265DC;
       --ds-bg: #0F172A;
       --ds-surface: #1E293B;
+      --ds-card: #334155;
       --ds-text: #F8FAFC;
+      --ds-accent: #38BDF8;
     }
-    
+
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: system-ui, -apple-system, sans-serif;
       background: var(--ds-bg);
       color: var(--ds-text);
-      padding: 2rem;
+      padding: 2rem 1rem;
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1000px;
       margin: 0 auto;
     }
 
     header {
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
 
-    .status-badge {
+    .badge {
       background: #7C3AED;
       color: #FFF;
       padding: 0.35rem 1rem;
       border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
+      font-size: 0.8rem;
+      font-weight: bold;
       text-transform: uppercase;
-      display: inline-block;
-      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
     }
 
     .controls {
       display: flex;
       justify-content: center;
       gap: 1rem;
-      margin-bottom: 2rem;
+      margin: 1.5rem 0 2rem;
+      flex-wrap: wrap;
     }
 
     .theme-btn {
       padding: 0.75rem 1.5rem;
       border-radius: 8px;
       border: 2px solid transparent;
-      font-weight: 600;
+      font-weight: bold;
       cursor: pointer;
       color: #FFF;
       transition: all 0.2s ease;
@@ -64,29 +63,112 @@
     .theme-btn[data-theme="adobe"] { background: #0265DC; }
     .theme-btn[data-theme="google"] { background: #1A73E8; }
     .theme-btn[data-theme="goodwill"] { background: #00539B; }
-    .theme-btn.active { border-color: #FFF; box-shadow: 0 0 12px rgba(255,255,255,0.4); }
+    .theme-btn.active { border-color: #FFF; box-shadow: 0 0 12px rgba(255,255,255,0.5); }
 
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
+    .live-demo-card {
       background: var(--ds-surface);
       border-radius: 12px;
       padding: 1.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 3rem;
     }
 
     .token-preview {
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0,0,0,0.4);
       padding: 1rem;
       border-radius: 6px;
       font-family: monospace;
-      font-size: 0.85rem;
-      color: #38BDF8;
-      overflow-x: auto;
+      color: var(--ds-accent);
+      white-space: pre-wrap;
+      margin-top: 1rem;
+    }
+
+    /* Picture Book Carousel Styles */
+    .carousel-section {
+      background: var(--ds-surface);
+      border-radius: 16px;
+      padding: 2rem;
+      border: 2px solid rgba(56, 189, 248, 0.3);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .carousel-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      background: var(--ds-card);
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .slide {
+      display: none;
+      text-align: center;
+      max-width: 700px;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .slide.active { display: block; }
+
+    .slide-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .slide h3 {
+      font-size: 1.75rem;
+      color: var(--ds-accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .slide p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #E2E8F0;
+    }
+
+    .carousel-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+
+    .nav-btn {
+      background: var(--ds-card);
+      color: #FFF;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .nav-btn:hover { background: var(--ds-accent); color: #000; }
+
+    .dots { display: flex; gap: 0.5rem; }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      cursor: pointer;
+    }
+
+    .dot.active { background: var(--ds-accent); }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -94,31 +176,91 @@
 
   <div class="container">
     <header>
-      <span class="status-badge">Live Public Infrastructure</span>
+      <span class="badge">Universal Infrastructure</span>
       <h1>healthearthack.github.io AI Design System</h1>
-      <p>Universal Design System Infrastructure mapped to Adobe, Google, and Goodwill (GII).</p>
+      <p>Live design token contexts mapped across enterprise brands.</p>
     </header>
 
+    <!-- LIVE DEMO CONTROLS -->
     <div class="controls">
       <button class="theme-btn active" data-theme="adobe" onclick="switchContext('adobe')">Adobe Spectrum</button>
       <button class="theme-btn" data-theme="google" onclick="switchContext('google')">Google Material 3</button>
       <button class="theme-btn" data-theme="goodwill" onclick="switchContext('goodwill')">Goodwill (GII)</button>
     </div>
 
-    <div class="card-grid">
-      <div class="card">
-        <h3 id="brand-title">Adobe Spectrum Context</h3>
-        <p id="brand-desc">Live reactive tokens compiled for Creative Cloud & web extensions.</p>
-        <div class="token-preview" id="token-code">
+    <!-- LIVE DEMO DISPLAY -->
+    <div class="live-demo-card">
+      <h3 id="brand-title">Adobe Spectrum Context</h3>
+      <p id="brand-desc">Live reactive tokens compiled for Creative Cloud & web extensions.</p>
+      <div class="token-preview" id="token-code">
 --brand-primary: #0265DC;
 --border-radius: 8px;
 --wcag-target: AAA;
-        </div>
       </div>
     </div>
+
+    <!-- SALES PICTURE BOOK CAROUSEL -->
+    <div class="carousel-section">
+      <div class="carousel-header">
+        <h2>📖 The Story of Design Systems</h2>
+        <p>Why standard systems break down, and how AI natively fixes them.</p>
+      </div>
+
+      <div class="carousel-container">
+        <!-- Slide 1 -->
+        <div class="slide active">
+          <div class="slide-icon">🧸</div>
+          <h3>Chapter 1: The Overflowing Toy Box</h3>
+          <p>Traditional design systems are like messy toy boxes filled with hundreds of hardcoded CSS files and rigid components. Every time a new platform arrives, teams buy more toys instead of fixing the box.</p>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+          <div class="slide-icon">🤖</div>
+          <h3>Chapter 2: The Enterprising Robot</h3>
+          <p>When AI tools write code today, they don't read design documentation. They grab random colors and shapes out of thin air, breaking visual consistency and accessibility standards instantly.</p>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+          <div class="slide-icon">⚡</div>
+          <h3>Chapter 3: The Fragile JSON Bridge</h3>
+          <p>Design teams try to fix this by sharing static JSON files. But raw JSON files break easily when APIs update or missing fields occur, leaving apps completely unstyled.</p>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide">
+          <div class="slide-icon">🔮</div>
+          <h3>Chapter 4: The AI-Native Universal System</h3>
+          <p>Our infrastructure hosts self-healing tokens live online. Instead of hardcoding values, AI and apps query live endpoints that translate instantly between Adobe Spectrum, Google Material 3, and Goodwill guidelines.</p>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="slide">
+          <div class="slide-icon">🚀</div>
+          <h3>Chapter 5: Truly Accessible Everywhere</h3>
+          <p>By shifting design system governance to an online web API on GitHub Pages, every app, developer, and AI agent gets instant WCAG AAA compliant tokens in real-time.</p>
+        </div>
+      </div>
+
+      <!-- Carousel Navigation -->
+      <div class="carousel-nav">
+        <button class="nav-btn" onclick="moveSlide(-1)">❮ Previous</button>
+        <div class="dots">
+          <span class="dot active" onclick="setSlide(0)"></span>
+          <span class="dot" onclick="setSlide(1)"></span>
+          <span class="dot" onclick="setSlide(2)"></span>
+          <span class="dot" onclick="setSlide(3)"></span>
+          <span class="dot" onclick="setSlide(4)"></span>
+        </div>
+        <button class="nav-btn" onclick="moveSlide(1)">Next ❯</button>
+      </div>
+    </div>
+
   </div>
 
   <script>
+    // Live Context Switcher Logic
     const contexts = {
       adobe: {
         title: "Adobe Spectrum Context",
@@ -143,6 +285,28 @@
       document.getElementById('brand-title').innerText = contexts[key].title;
       document.getElementById('brand-desc').innerText = contexts[key].desc;
       document.getElementById('token-code').innerText = contexts[key].code;
+    }
+
+    // Picture Book Carousel Logic
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+
+    function showSlide(n) {
+      slides.forEach(s => s.classList.remove('active'));
+      dots.forEach(d => d.classList.remove('active'));
+      
+      currentSlide = (n + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+
+    function moveSlide(direction) {
+      showSlide(currentSlide + direction);
+    }
+
+    function setSlide(index) {
+      showSlide(index);
     }
   </script>
 
