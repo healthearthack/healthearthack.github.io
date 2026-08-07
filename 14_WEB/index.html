@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AИDY KIECKHEFER | UNIVERSAL AI DESGIN SYSTEM</title>
+  <title>healthearthack | Design System as a Service (DSaaS)</title>
   <style>
     :root {
       --ds-bg: #0F172A;
@@ -11,394 +11,119 @@
       --ds-card: #334155;
       --ds-text: #F8FAFC;
       --ds-accent: #38BDF8;
-      
-      /* Dynamic Swag Tokens */
       --shirt-color: #0A0E17;
       --graphic-accent: #FF2A6D;
       --graphic-secondary: #05D9E8;
       --brand-font: system-ui, sans-serif;
     }
-
-    body {
-      margin: 0;
-      font-family: var(--brand-font);
-      background: var(--ds-bg);
-      color: var(--ds-text);
-      padding: 2rem 1rem;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .badge {
-      background: #7C3AED;
-      color: #FFF;
-      padding: 0.35rem 1rem;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .brand-switch {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin: 1.5rem 0;
-      flex-wrap: wrap;
-    }
-
-    .brand-btn {
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      border: 2px solid transparent;
-      font-weight: bold;
-      cursor: pointer;
-      color: #FFF;
-      transition: all 0.2s ease;
-    }
-
+    body { margin: 0; font-family: var(--brand-font); background: var(--ds-bg); color: var(--ds-text); padding: 2rem 1rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    header { text-align: center; margin-bottom: 2rem; }
+    .badge { background: #7C3AED; color: #FFF; padding: 0.35rem 1rem; border-radius: 999px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; }
+    .brand-switch { display: flex; justify-content: center; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap; }
+    .brand-btn { padding: 0.75rem 1.5rem; border-radius: 8px; border: 2px solid transparent; font-weight: bold; cursor: pointer; color: #FFF; transition: all 0.2s ease; }
     .brand-btn[data-brand="adobe"] { background: #FF0000; }
     .brand-btn[data-brand="google"] { background: #4285F4; }
     .brand-btn[data-brand="goodwill"] { background: #00539B; }
     .brand-btn.active { border-color: #FFF; box-shadow: 0 0 14px rgba(255,255,255,0.6); }
-
-    /* Studio Layout Grid */
-    .studio-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    @media (max-width: 768px) {
-      .studio-grid { grid-template-columns: 1fr; }
-    }
-
-    .card {
-      background: var(--ds-surface);
-      border-radius: 16px;
-      padding: 1.5rem;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    /* T-Shirt Visualizer */
-    .shirt-canvas {
-      background: #000;
-      border-radius: 12px;
-      height: 320px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      border: 2px dashed var(--ds-accent);
-    }
-
-    .shirt-svg {
-      width: 220px;
-      fill: var(--shirt-color);
-      transition: fill 0.3s ease;
-    }
-
-    .shirt-graphic-overlay {
-      position: absolute;
-      top: 35%;
-      text-align: center;
-      pointer-events: none;
-    }
-
-    .shirt-badge {
-      border: 2px solid var(--graphic-secondary);
-      color: var(--graphic-accent);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      font-weight: 900;
-      font-size: 0.9rem;
-      letter-spacing: 2px;
-      background: rgba(0,0,0,0.7);
-      text-transform: uppercase;
-    }
-
-    .code-box {
-      background: rgba(0,0,0,0.5);
-      padding: 1rem;
-      border-radius: 8px;
-      font-family: monospace;
-      font-size: 0.85rem;
-      color: #38BDF8;
-      overflow-x: auto;
-      white-space: pre-wrap;
-      max-height: 200px;
-    }
-
-    .export-btn {
-      width: 100%;
-      background: #10B981;
-      color: #000;
-      font-weight: bold;
-      border: none;
-      padding: 0.85rem;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 1rem;
-      font-size: 1rem;
-    }
-
-    .export-btn:hover { background: #34D399; }
-
-    /* Story Carousel Styles */
-    .carousel-section {
-      background: var(--ds-surface);
-      border-radius: 16px;
-      padding: 2rem;
-      border: 2px solid rgba(56, 189, 248, 0.3);
-      margin-top: 2rem;
-    }
-
-    .carousel-container {
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
-      background: var(--ds-card);
-      min-height: 280px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-
+    .studio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
+    @media (max-width: 768px) { .studio-grid { grid-template-columns: 1fr; } }
+    .card { background: var(--ds-surface); border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(255,255,255,0.1); }
+    .shirt-canvas { background: #000; border-radius: 12px; height: 320px; display: flex; align-items: center; justify-content: center; position: relative; border: 2px dashed var(--ds-accent); }
+    .shirt-svg { width: 220px; fill: var(--shirt-color); transition: fill 0.3s ease; }
+    .shirt-graphic-overlay { position: absolute; top: 35%; text-align: center; pointer-events: none; }
+    .shirt-badge { border: 2px solid var(--graphic-secondary); color: var(--graphic-accent); padding: 0.5rem 1rem; border-radius: 8px; font-weight: 900; font-size: 0.9rem; letter-spacing: 2px; background: rgba(0,0,0,0.7); text-transform: uppercase; }
+    .code-box { background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 8px; font-family: monospace; font-size: 0.85rem; color: #38BDF8; overflow-x: auto; white-space: pre-wrap; max-height: 200px; }
+    .export-btn { width: 100%; background: #10B981; color: #000; font-weight: bold; border: none; padding: 0.85rem; border-radius: 8px; cursor: pointer; margin-top: 1rem; font-size: 1rem; }
+    .carousel-section { background: var(--ds-surface); border-radius: 16px; padding: 2rem; border: 2px solid rgba(56, 189, 248, 0.3); margin-top: 2rem; }
+    .carousel-container { position: relative; overflow: hidden; border-radius: 12px; background: var(--ds-card); min-height: 280px; display: flex; align-items: center; justify-content: center; padding: 2rem; }
     .slide { display: none; text-align: center; max-width: 700px; }
     .slide.active { display: block; }
     .slide-icon { font-size: 3.5rem; margin-bottom: 0.5rem; }
     .slide h3 { color: var(--ds-accent); margin-bottom: 0.5rem; }
-
-    .carousel-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 1.5rem;
-    }
-
-    .nav-btn {
-      background: var(--ds-card);
-      color: #FFF;
-      border: 1px solid rgba(255,255,255,0.2);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
+    .carousel-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; }
+    .nav-btn { background: var(--ds-card); color: #FFF; border: 1px solid rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; }
     .dots { display: flex; gap: 0.5rem; }
     .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.2); cursor: pointer; }
     .dot.active { background: var(--ds-accent); }
   </style>
 </head>
 <body>
-
   <div class="container">
     <header>
       <span class="badge">Design System as a Service (DSaaS)</span>
       <h1>healthearthack Multi-Brand Studio</h1>
       <p>Collaborative token architecture powering Web Apps & Physical Swag Production.</p>
     </header>
-
-    <!-- BRAND SELECTION CONTROLS -->
     <div class="brand-switch">
       <button class="brand-btn active" data-brand="adobe" onclick="selectBrand('adobe')">Adobe Space Tee</button>
       <button class="brand-btn" data-brand="google" onclick="selectBrand('google')">Google.com Web</button>
       <button class="brand-btn" data-brand="goodwill" onclick="selectBrand('goodwill')">Goodwill.com Merch</button>
     </div>
-
-    <!-- LIVE STUDIO GRID -->
     <div class="studio-grid">
-      <!-- Merchandise & Landing Preview -->
       <div class="card">
         <h3 id="studio-title">Adobe Space Tee (Physical Swag Preview)</h3>
         <p id="studio-desc">Live vector shirt mock rendered directly from real-time brand tokens.</p>
-        
         <div class="shirt-canvas">
-          <svg class="shirt-svg" viewBox="0 0 24 24">
-            <path d="M12 4c-1.2 0-2.4.4-3.4 1.2L4 2.5 1 6l3.5 2.8V21h15V8.8L23 6l-3-3.5-4.6 2.7C14.4 4.4 13.2 4 12 4z"/>
-          </svg>
-          <div class="shirt-graphic-overlay">
-            <div class="shirt-badge" id="graphic-badge">ADOBE SPACE // 2026</div>
-          </div>
+          <svg class="shirt-svg" viewBox="0 0 24 24"><path d="M12 4c-1.2 0-2.4.4-3.4 1.2L4 2.5 1 6l3.5 2.8V21h15V8.8L23 6l-3-3.5-4.6 2.7C14.4 4.4 13.2 4 12 4z"/></svg>
+          <div class="shirt-graphic-overlay"><div class="shirt-badge" id="graphic-badge">ADOBE SPACE // 2026</div></div>
         </div>
       </div>
-
-      <!-- Live Token Engine & Manufacturer Exporter -->
       <div class="card">
         <h3>Live Manufacturer Token Payload</h3>
         <p>Raw JSON compiled live for web apps and garment print machinery.</p>
-
-        <div class="code-box" id="token-payload">
-{
-  "brand": "Adobe Space",
-  "target": "Direct-to-Garment Print",
-  "pantone_primary": "Pantone 18-1664 TPX",
-  "pantone_secondary": "Pantone 14-4516 TPX",
-  "vector_scale": "12in x 14in @ 300DPI",
-  "wcag_print_contrast": "PASS (AAA)"
-}
-        </div>
-
+        <div class="code-box" id="token-payload">{ "brand": "Adobe Space", "target": "Direct-to-Garment Print", "pantone_primary": "Pantone 18-1664 TPX", "pantone_secondary": "Pantone 14-4516 TPX", "vector_scale": "12in x 14in @ 300DPI", "wcag_print_contrast": "PASS (AAA)" }</div>
         <button class="export-btn" onclick="exportManufacturerPackage()">📦 Export Production Package (JSON + SVG)</button>
       </div>
     </div>
-
-    <!-- PICTURE BOOK CAROUSEL STORY -->
     <div class="carousel-section">
       <div style="text-align: center; margin-bottom: 1rem;">
         <h2>📖 The Story of Design Systems</h2>
         <p>Why standard design systems break, and why DSaaS fixes them forever.</p>
       </div>
-
       <div class="carousel-container">
-        <div class="slide active">
-          <div class="slide-icon">🧸</div>
-          <h3>Chapter 1: The Overflowing Toy Box</h3>
-          <p>Traditional systems hoard static CSS files. Every time a team builds a landing page or t-shirt, they reinvent components instead of sharing tokens.</p>
-        </div>
-        <div class="slide">
-          <div class="slide-icon">🤖</div>
-          <h3>Chapter 2: The Enterprising Robot</h3>
-          <p>When AI generates code without a centralized token API, it picks random colors and breaks WCAG accessibility guidelines instantly.</p>
-        </div>
-        <div class="slide">
-          <div class="slide-icon">⚡</div>
-          <h3>Chapter 3: The Fragile JSON Bridge</h3>
-          <p>Offline JSON files get outdated fast. When developer specs drift from merch print specs, physical products print with broken branding.</p>
-        </div>
-        <div class="slide">
-          <div class="slide-icon">🔮</div>
-          <h3>Chapter 4: Design System as a Service</h3>
-          <p>By hosting your tokens on GitHub Pages, web developers, AI tools, and swag vendors pull the exact same brand rules directly from one URL.</p>
-        </div>
-        <div class="slide">
-          <div class="slide-icon">🚀</div>
-          <h3>Chapter 5: 100% On-Brand Everywhere</h3>
-          <p>From Adobe.com web layouts to physical space t-shirts, your cross-functional team ships pixel-perfect products effortlessly.</p>
-        </div>
+        <div class="slide active"><div class="slide-icon">🧸</div><h3>Chapter 1: The Overflowing Toy Box</h3><p>Traditional systems hoard static CSS files. Every time a team builds a landing page or t-shirt, they reinvent components instead of sharing tokens.</p></div>
+        <div class="slide"><div class="slide-icon">🤖</div><h3>Chapter 2: The Enterprising Robot</h3><p>When AI generates code without a centralized token API, it picks random colors and breaks WCAG accessibility guidelines instantly.</p></div>
+        <div class="slide"><div class="slide-icon">⚡</div><h3>Chapter 3: The Fragile JSON Bridge</h3><p>Offline JSON files get outdated fast. When developer specs drift from merch print specs, physical products print with broken branding.</p></div>
+        <div class="slide"><div class="slide-icon">🔮</div><h3>Chapter 4: Design System as a Service</h3><p>By hosting your tokens on GitHub Pages, web developers, AI tools, and swag vendors pull the exact same brand rules directly from one URL.</p></div>
+        <div class="slide"><div class="slide-icon">🚀</div><h3>Chapter 5: 100% On-Brand Everywhere</h3><p>From Adobe.com web layouts to physical space t-shirts, your cross-functional team ships pixel-perfect products effortlessly.</p></div>
       </div>
-
       <div class="carousel-nav">
         <button class="nav-btn" onclick="moveSlide(-1)">❮ Previous</button>
-        <div class="dots">
-          <span class="dot active" onclick="setSlide(0)"></span>
-          <span class="dot" onclick="setSlide(1)"></span>
-          <span class="dot" onclick="setSlide(2)"></span>
-          <span class="dot" onclick="setSlide(3)"></span>
-          <span class="dot" onclick="setSlide(4)"></span>
-        </div>
+        <div class="dots"><span class="dot active" onclick="setSlide(0)"></span><span class="dot" onclick="setSlide(1)"></span><span class="dot" onclick="setSlide(2)"></span><span class="dot" onclick="setSlide(3)"></span><span class="dot" onclick="setSlide(4)"></span></div>
         <button class="nav-btn" onclick="moveSlide(1)">Next ❯</button>
       </div>
     </div>
-
   </div>
-
   <script>
     const brandData = {
-      adobe: {
-        title: "Adobe Space Tee (Physical Swag Preview)",
-        desc: "Live vector shirt mock rendered directly from real-time brand tokens.",
-        badge: "ADOBE SPACE // 2026",
-        shirtColor: "#0A0E17",
-        accent: "#FF0000",
-        secondary: "#38BDF8",
-        payload: {
-          brand: "Adobe Space",
-          target: "Direct-to-Garment Print",
-          pantone_primary: "Pantone 18-1664 TPX (Red)",
-          pantone_secondary: "Pantone 15-4020 TPX (Cyan)",
-          vector_scale: "12in x 14in @ 300DPI",
-          wcag_print_contrast: "PASS (AAA)"
-        }
-      },
-      google: {
-        title: "Google.com Landing Page Engine",
-        desc: "Web layout components driven by Material 3 dynamic slots.",
-        badge: "GOOGLE M3 // WEB",
-        shirtColor: "#17191C",
-        accent: "#4285F4",
-        secondary: "#34A853",
-        payload: {
-          brand: "Google Material 3",
-          target: "Web Application DOM",
-          css_variable_primary: "#4285F4",
-          css_variable_secondary: "#34A853",
-          corner_radius: "16px",
-          wcag_web_contrast: "PASS (AAA)"
-        }
-      },
-      goodwill: {
-        title: "Goodwill.com Community Merch",
-        desc: "Accessible physical assets mapped to Goodwill blue and gold tokens.",
-        badge: "GOODWILL // GII-2026",
-        shirtColor: "#002B49",
-        accent: "#00539B",
-        secondary: "#FFC72C",
-        payload: {
-          brand: "Goodwill Industries",
-          target: "Screen Printing & Web",
-          pantone_primary: "Pantone 2935 C (Blue)",
-          pantone_secondary: "Pantone 123 C (Gold)",
-          vector_scale: "10in x 10in @ 300DPI",
-          wcag_print_contrast: "PASS (AAA)"
-        }
-      }
+      adobe: { title: "Adobe Space Tee (Physical Swag Preview)", desc: "Live vector shirt mock rendered directly from real-time brand tokens.", badge: "ADOBE SPACE // 2026", shirtColor: "#0A0E17", accent: "#FF0000", secondary: "#38BDF8", payload: { brand: "Adobe Space", target: "Direct-to-Garment Print", pantone_primary: "Pantone 18-1664 TPX (Red)", pantone_secondary: "Pantone 15-4020 TPX (Cyan)", vector_scale: "12in x 14in @ 300DPI", wcag_print_contrast: "PASS (AAA)" } },
+      google: { title: "Google.com Landing Page Engine", desc: "Web layout components driven by Material 3 dynamic slots.", badge: "GOOGLE M3 // WEB", shirtColor: "#17191C", accent: "#4285F4", secondary: "#34A853", payload: { brand: "Google Material 3", target: "Web Application DOM", css_variable_primary: "#4285F4", css_variable_secondary: "#34A853", corner_radius: "16px", wcag_web_contrast: "PASS (AAA)" } },
+      goodwill: { title: "Goodwill.com Community Merch", desc: "Accessible physical assets mapped to Goodwill blue and gold tokens.", badge: "GOODWILL // GII-2026", shirtColor: "#002B49", accent: "#00539B", secondary: "#FFC72C", payload: { brand: "Goodwill Industries", target: "Screen Printing & Web", pantone_primary: "Pantone 2935 C (Blue)", pantone_secondary: "Pantone 123 C (Gold)", vector_scale: "10in x 10in @ 300DPI", wcag_print_contrast: "PASS (AAA)" } }
     };
-
     function selectBrand(key) {
       const data = brandData[key];
-      document.querySelectorAll('.brand-btn').forEach(btn => btn.classList.remove('active'));
-      document.querySelector(`[data-brand="${key}"]`).classList.add('active');
-
-      document.getElementById('studio-title').innerText = data.title;
-      document.getElementById('studio-desc').innerText = data.desc;
-      document.getElementById('graphic-badge').innerText = data.badge;
-
-      document.documentElement.style.setProperty('--shirt-color', data.shirtColor);
-      document.documentElement.style.setProperty('--graphic-accent', data.accent);
-      document.documentElement.style.setProperty('--graphic-secondary', data.secondary);
-
-      document.getElementById('token-payload').innerText = JSON.stringify(data.payload, null, 2);
+      document.querySelectorAll(".brand-btn").forEach(btn => btn.classList.remove("active"));
+      document.querySelector(`[data-brand="${key}"]`).classList.add("active");
+      document.getElementById("studio-title").innerText = data.title;
+      document.getElementById("studio-desc").innerText = data.desc;
+      document.getElementById("graphic-badge").innerText = data.badge;
+      document.documentElement.style.setProperty("--shirt-color", data.shirtColor);
+      document.documentElement.style.setProperty("--graphic-accent", data.accent);
+      document.documentElement.style.setProperty("--graphic-secondary", data.secondary);
+      document.getElementById("token-payload").innerText = JSON.stringify(data.payload, null, 2);
     }
-
     function exportManufacturerPackage() {
-      const activeText = document.getElementById('token-payload').innerText;
-      const blob = new Blob([activeText], { type: 'application/json' });
+      const activeText = document.getElementById("token-payload").innerText;
+      const blob = new Blob([activeText], { type: "application/json" });
       const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'production-swag-spec.json';
-      a.click();
-      alert('Production Swag Spec Package Downloaded! Send this directly to the print vendor.');
+      const a = document.createElement("a"); a.href = url; a.download = "production-swag-spec.json"; a.click();
+      alert("Production Swag Spec Package Downloaded!");
     }
-
-    // Carousel Logic
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-
-    function showSlide(n) {
-      slides.forEach(s => s.classList.remove('active'));
-      dots.forEach(d => d.classList.remove('active'));
-      currentSlide = (n + slides.length) % slides.length;
-      slides[currentSlide].classList.add('active');
-      dots[currentSlide].classList.add('active');
-    }
-
+    let currentSlide = 0; const slides = document.querySelectorAll(".slide"); const dots = document.querySelectorAll(".dot");
+    function showSlide(n) { slides.forEach(s => s.classList.remove("active")); dots.forEach(d => d.classList.remove("active")); currentSlide = (n + slides.length) % slides.length; slides[currentSlide].classList.add("active"); dots[currentSlide].classList.add("active"); }
     function moveSlide(dir) { showSlide(currentSlide + dir); }
     function setSlide(idx) { showSlide(idx); }
   </script>
-
 </body>
 </html>
