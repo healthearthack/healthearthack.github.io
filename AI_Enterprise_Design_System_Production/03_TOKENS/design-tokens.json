@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "AI Enterprise Design System Tokens",
+  "version": "2.0.0",
+  "color": {
+    "brand": {
+      "adobe-blue": {
+        "value": "#0265DC",
+        "type": "color"
+      },
+      "google-blue": {
+        "value": "#1A73E8",
+        "type": "color"
+      },
+      "goodwill-blue": {
+        "value": "#00539B",
+        "type": "color"
+      },
+      "ai-accent": {
+        "value": "#7C3AED",
+        "type": "color",
+        "description": "AI generative state indicator"
+      }
+    }
+  },
+  "ai-context": {
+    "prompt-role": {
+      "value": "system-ui-designer",
+      "type": "text"
+    },
+    "safety-threshold": {
+      "value": "strict-wcag-aaa",
+      "type": "text"
+    }
+  }
+}
