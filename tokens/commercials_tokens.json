@@ -1,0 +1,79 @@
+{
+  "$schema": "https://healthearthack.github.io/tokens/schema.v1.json",
+  "system_info": {
+    "name": "Renaissance DSaaS Commercial Tokens",
+    "version": "1.0.0",
+    "primary_archetype": "1920s Crimson Velvet & Antique Gold Filigree"
+  },
+  "active_rendered_commercial": {
+    "spot_id": "dsaas_core_01",
+    "title": "Design System as a Service Commercial",
+    "tokens": {
+      "colors": {
+        "bg_dark": "#120307",
+        "primary_crimson": "#8B0000",
+        "accent_gold": "#FFD700",
+        "text_white": "#FFFDF5"
+      },
+      "typography": {
+        "badge_font": "Georgia-Bold",
+        "subtitle_font": "Georgia",
+        "badge_size_px": 55,
+        "subtitle_size_px": 38
+      },
+      "layout": {
+        "resolution": "1920x1080",
+        "fps": 24,
+        "badge_position_y": 320,
+        "subtitle_position_y": 580
+      },
+      "audio": {
+        "voice_engine": "gTTS (Google Text-to-Speech)",
+        "tld": "com",
+        "lang": "en"
+      }
+    }
+  },
+  "suite_commercial_tokens": [
+    {
+      "id": "spot_01",
+      "name": "AI Warehouse Commercial",
+      "tokens": {
+        "color_primary": "#D35400",
+        "color_border": "#FFD700",
+        "badge_text": "VOTES MOVE ITEMS TO SHELVES",
+        "theme": "Industrial Vintage Amber"
+      }
+    },
+    {
+      "id": "spot_02",
+      "name": "AI Reviews Commercial",
+      "tokens": {
+        "color_primary": "#05D9E8",
+        "color_border": "#FFD700",
+        "badge_text": "PEOPLE BRING THE INVENTORY",
+        "theme": "Cyber Renaissance Cyan"
+      }
+    },
+    {
+      "id": "spot_03",
+      "name": "Forecast Commercial",
+      "tokens": {
+        "color_primary": "#FFC72C",
+        "color_border": "#8B0000",
+        "badge_text": "YOUR AD HERE",
+        "theme": "Gilded Broadcast Weather"
+      }
+    },
+    {
+      "id": "spot_04",
+      "name": "FAIRE OS Commercial",
+      "tokens": {
+        "color_primary": "#D100D1",
+        "color_border": "#FFD700",
+        "badge_text": "FAIRE OS - MAKE IDEAS OPERATIONAL",
+        "theme": "Velvet Arcade Magenta"
+      }
+    }
+  ]
+}
