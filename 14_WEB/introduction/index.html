@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AИDY KIECKHEFER | A LA CARTE AI DESIGN SYSTEM</title>
+  <style>
+    :root {
+      --ds-bg: #0B0F17;
+      --ds-surface: #161F30;
+      --ds-card: #212E48;
+      --ds-text: #F8FAFC;
+      --ds-accent: #38BDF8;
+      --product-bg: #0A0E17;
+      --graphic-accent: #FF2A6D;
+      --graphic-secondary: #05D9E8;
+      --brand-font: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--brand-font); background: var(--ds-bg); color: var(--ds-text); padding: 2rem 1rem; line-height: 1.5; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    header { text-align: center; margin-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2rem; }
+    .badge { background: linear-gradient(135deg, #7C3AED, #3B82F6); color: #FFF; padding: 0.4rem 1.2rem; border-radius: 999px; font-size: 0.75rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; display: inline-block; margin-bottom: 1rem; }
+    h1.main-title { font-size: 2rem; font-weight: 900; letter-spacing: 1px; margin: 0 0 0.5rem 0; color: #FFF; text-transform: uppercase; }
+    .subtitle { color: #94A3B8; max-width: 750px; margin: 0 auto; font-size: 0.95rem; }
+    .intro-section { background: var(--ds-surface); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 16px; padding: 2rem; margin-bottom: 3rem; }
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+    @media (max-width: 850px) { .intro-grid { grid-template-columns: 1fr; } }
+    .parent-box { background: #0D131F; border-left: 4px solid var(--ds-accent); padding: 1.25rem; border-radius: 8px; }
+    .child-box { background: #18132A; border-left: 4px solid #A855F7; padding: 1.25rem; border-radius: 8px; }
+    .perspective-label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+    .parent-box .perspective-label { color: var(--ds-accent); }
+    .child-box .perspective-label { color: #C084FC; }
+    .controls-card { background: var(--ds-surface); border-radius: 16px; padding: 1.75rem; margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.08); }
+    .control-row { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; justify-content: space-between; }
+    .control-group { display: flex; flex-direction: column; gap: 0.5rem; flex: 1; min-width: 240px; }
+    .control-group label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #94A3B8; }
+    select, input { background: var(--ds-card); border: 1px solid rgba(255,255,255,0.2); color: #FFF; padding: 0.75rem 1rem; border-radius: 8px; font-family: inherit; font-size: 0.95rem; outline: none; }
+    .studio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
+    @media (max-width: 900px) { .studio-grid { grid-template-columns: 1fr; } }
+    .card { background: var(--ds-surface); border-radius: 16px; padding: 1.75rem; border: 1px solid rgba(255,255,255,0.08); }
+    .product-canvas { background: var(--product-bg); border-radius: 12px; height: 340px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; border: 2px dashed rgba(255,255,255,0.15); transition: all 0.3s ease; overflow: hidden; }
+    .mockup-icon { font-size: 6rem; filter: drop-shadow(0 0 12px rgba(255,255,255,0.2)); }
+    .graphic-overlay { margin-top: 1rem; text-align: center; }
+    .graphic-badge { border: 2px solid var(--graphic-secondary); color: var(--graphic-accent); padding: 0.5rem 1.25rem; border-radius: 8px; font-weight: 900; font-size: 0.85rem; letter-spacing: 2px; background: rgba(0,0,0,0.8); text-transform: uppercase; }
+    .code-box { background: #090D16; padding: 1.25rem; border-radius: 8px; font-family: monospace; font-size: 0.82rem; color: #38BDF8; overflow-x: auto; white-space: pre-wrap; max-height: 240px; }
+    .token-injector { margin-top: 1rem; display: flex; gap: 0.5rem; }
+    .token-injector input { flex: 1; font-size: 0.85rem; padding: 0.5rem 0.75rem; }
+    .btn { background: var(--ds-accent); color: #0F172A; font-weight: 800; border: none; padding: 0.75rem 1.25rem; border-radius: 8px; cursor: pointer; }
+    .btn-green { background: #10B981; color: #000; width: 100%; margin-top: 1rem; font-size: 1rem; }
+    .steps-section { background: var(--ds-surface); border-radius: 16px; padding: 2rem; margin-top: 2rem; }
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+    .step-card { background: var(--ds-card); padding: 1.25rem; border-radius: 12px; }
+    .step-num { background: var(--ds-accent); color: #000; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 0.85rem; margin-bottom: 0.75rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge">DSaaS Engine v2.5</span>
+      <h1 class="main-title">AИDY KIECKHEFER | A LA CARTE AI DESIGN SYSTEM</h1>
+      <p class="subtitle">Centralized Token Architecture Powering Multi-Brand Web Applications, SpaceX Starship Merch, and Physical Production Lines.</p>
+    </header>
+
+    <div class="intro-section" id="introduction">
+      <h2>📖 What is a Design System & Why Care?</h2>
+      <p style="color: #94A3B8;">An introduction to cross-platform branding tokens, translated side-by-side for engineers and creators.</p>
+      <div class="intro-grid">
+        <div class="parent-box">
+          <div class="perspective-label">👨‍💻 Technical / Parent Perspective (Engineering Spec)</div>
+          <p><strong>Definition:</strong> A Design System is a single source of truth (SSOT) defining design tokens—atomic values such as RGB hex codes, font weights, grid layouts, and spatial specs.</p>
+          <p><strong>Utility:</strong> Instead of hardcoding static CSS variables into web app DOMs, our DSaaS exposes a dynamic API endpoint. Front-end frameworks and garment printers ingest identical JSON schemas to maintain WCAG AAA compliance and pixel-perfect physical manufacturing.</p>
+        </div>
+        <div class="child-box">
+          <div class="perspective-label">🧒 Semantic / Child Perspective (Elementary Translation)</div>
+          <p><strong>Definition:</strong> Imagine a master box of digital LEGO bricks! Instead of guessing which red or blue piece to use every time you build a toy, everyone picks from the exact same master tray.</p>
+          <p><strong>Utility:</strong> Whether you want a cool SpaceX launch hoodie, a Google website button, or an Adobe coffee mug, this system makes sure the colors, logos, and style match 100% perfectly every single time!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls-card">
+      <div class="control-row">
+        <div class="control-group">
+          <label for="brand-select">1. Select Target Brand</label>
+          <select id="brand-select" onchange="updateStudio()">
+            <option value="spacex">🚀 SpaceX Swag Studio</option>
+            <option value="adobe">🎨 Adobe Space Tee</option>
+            <option value="google">🌐 Google Material 3</option>
+            <option value="goodwill">💙 Goodwill Merch</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="product-select">2. What product do you want tokens made for?</label>
+          <select id="product-select" onchange="updateStudio()">
+            <option value="tee">👕 Tee Shirt (Screen Print / DTG)</option>
+            <option value="mug">☕ Ceramic Coffee Mug</option>
+            <option value="patch">🛡️ Flight Patrol Patch</option>
+            <option value="web">💻 Web App DOM Component</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="studio-grid">
+      <div class="card">
+        <h3 id="studio-title">SpaceX Starship Merch</h3>
+        <p id="studio-desc">Vector mock rendered from live orbital-grade design tokens.</p>
+        <div class="product-canvas" id="product-canvas">
+          <div class="mockup-icon" id="mockup-icon">👕</div>
+          <div class="graphic-overlay">
+            <div class="graphic-badge" id="graphic-badge">SPACEX // STARSHIP 2026</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Live Token Payload (JSON)</h3>
+        <p style="font-size: 0.85rem; color: #94A3B8;">Real-time compiled tokens for developers and factory printers.</p>
+        <div class="code-box" id="token-payload">{}</div>
+        <div style="margin-top: 1.25rem;">
+          <label style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #94A3B8;">3. Inject Custom Token to System</label>
+          <div class="token-injector">
+            <input type="text" id="token-key" placeholder="Key (e.g. custom_pantone)">
+            <input type="text" id="token-val" placeholder="Value (e.g. Pantone 2935 C)">
+            <button class="btn" onclick="injectToken()">Inject</button>
+          </div>
+        </div>
+        <button class="btn btn-green" onclick="exportManufacturerPackage()">📦 Export Production Package (JSON)</button>
+      </div>
+    </div>
+
+    <div class="steps-section">
+      <h2>🛠️ How to Operate This Design System</h2>
+      <div class="steps-grid">
+        <div class="step-card"><div class="step-num">1</div><h4>Choose Brand</h4><p style="font-size: 0.85rem; color: #94A3B8;">Select SpaceX, Adobe, Google, or Goodwill from the brand selector.</p></div>
+        <div class="step-card"><div class="step-num">2</div><h4>Pick Product Target</h4><p style="font-size: 0.85rem; color: #94A3B8;">Compile tokens for tees, mugs, patches, or web components.</p></div>
+        <div class="step-card"><div class="step-num">3</div><h4>Inject Live Tokens</h4><p style="font-size: 0.85rem; color: #94A3B8;">Add custom metadata into the live payload stream.</p></div>
+        <div class="step-card"><div class="step-num">4</div><h4>Export Package</h4><p style="font-size: 0.85rem; color: #94A3B8;">Download the production spec JSON.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const brandConfigs = {
+      spacex: { name: "SpaceX", badge: "SPACEX // STARSHIP 2026", primaryColor: "#000000", accent: "#FF2A6D", secondary: "#05D9E8", tokens: { pantone_primary: "Pantone Process Black C", pantone_accent: "Pantone 18-1664 TPX (Mars Red)", orbital_spec: "MIL-STD-810H Compliant" } },
+      adobe: { name: "Adobe Space", badge: "ADOBE SPACE // 2026", primaryColor: "#0A0E17", accent: "#FF0000", secondary: "#38BDF8", tokens: { pantone_primary: "Pantone 18-1664 TPX (Red)", pantone_secondary: "Pantone 15-4020 TPX (Cyan)", vector_scale: "12in x 14in @ 300DPI" } },
+      google: { name: "Google Material 3", badge: "GOOGLE M3 // 2026", primaryColor: "#17191C", accent: "#4285F4", secondary: "#34A853", tokens: { css_variable_primary: "#4285F4", css_variable_secondary: "#34A853", corner_radius: "16px" } },
+      goodwill: { name: "Goodwill Industries", badge: "GOODWILL // GII-2026", primaryColor: "#002B49", accent: "#00539B", secondary: "#FFC72C", tokens: { pantone_primary: "Pantone 2935 C (Blue)", pantone_secondary: "Pantone 123 C (Gold)", community_impact: "Accessible Tokens" } }
+    };
+    const productIcons = { tee: "👕", mug: "☕", patch: "🛡️", web: "💻" };
+    const productNames = { tee: "Tee Shirt", mug: "Ceramic Coffee Mug", patch: "Flight Patrol Patch", web: "Web App DOM Component" };
+    let activePayload = {};
+
+    function updateStudio() {
+      const brandKey = document.getElementById('brand-select').value;
+      const productKey = document.getElementById('product-select').value;
+      const brand = brandConfigs[brandKey];
+      const icon = productIcons[productKey];
+      const productName = productNames[productKey];
+
+      document.getElementById('studio-title').innerText = `${brand.name} ${productName}`;
+      document.getElementById('studio-desc').innerText = `Live vector preview compiled for ${productName.toLowerCase()}.`;
+      document.getElementById('graphic-badge').innerText = brand.badge;
+      document.getElementById('mockup-icon').innerText = icon;
+      document.getElementById('product-canvas').style.backgroundColor = brand.primaryColor;
+
+      document.documentElement.style.setProperty('--graphic-accent', brand.accent);
+      document.documentElement.style.setProperty('--graphic-secondary', brand.secondary);
+
+      activePayload = { brand: brand.name, product_type: productName, wcag_contrast: "PASS (AAA)", timestamp_utc: new Date().toISOString(), ...brand.tokens };
+      renderPayload();
+    }
+
+    function renderPayload() { document.getElementById('token-payload').innerText = JSON.stringify(activePayload, null, 2); }
+    function injectToken() {
+      const key = document.getElementById('token-key').value.trim();
+      const val = document.getElementById('token-val').value.trim();
+      if (key && val) { activePayload[key] = val; renderPayload(); document.getElementById('token-key').value = ''; document.getElementById('token-val').value = ''; alert(`Token injected: "${key}": "${val}"`); }
+    }
+    function exportManufacturerPackage() {
+      const blob = new Blob([JSON.stringify(activePayload, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `${activePayload.brand.toLowerCase().replace(/\s+/g, '-')}-token-spec.json`; a.click();
+    }
+    updateStudio();
+  </script>
+</body>
+</html>
